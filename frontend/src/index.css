@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --danger-color: #ff0000;
+  --safe-color: #00ff00;
+  --warning-color: #ff9500;
+  --anomaly-color: #fcaf03;
+  --background: #000000;
+  --text-primary: #ffffff;
+  --text-secondary: #888888;
+  --glass-bg: rgba(255, 255, 255, 0.05);
+  --glass-border: rgba(255, 255, 255, 0.1);
+}
+
+* {
+  border-color: var(--glass-border);
+}
+
+body {
+  background-color: var(--background);
+  color: var(--text-primary);
+}
+
+.danger-text {
+  color: var(--danger-color);
+}
+
+.safe-text {
+  color: var(--safe-color);
+}
+
+.warning-text {
+  color: var(--warning-color);
+}
+
+.glass-card {
+  background-color: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  border-radius: 1.5rem;
+}
+
+.glass-panel {
+  background-color: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--glass-border);
+  padding: 1.5rem;
+  border-radius: 1.5rem;
+}
+
+@keyframes breath {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.85; }
+}
+
+.animate-breath {
+  animation: breath 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { box-shadow: 0 0 20px var(--danger-color); }
+  50% { box-shadow: 0 0 40px var(--danger-color), 0 0 60px var(--danger-color); }
+}
+
+.animate-danger-pulse {
+  animation: pulse-glow 1s ease-in-out infinite;
+}
+
+canvas {
+  width: 100%;
+  height: 100%;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--glass-border);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: rgba(255, 255, 255, 0.2);
+}
